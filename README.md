@@ -1,5 +1,6 @@
 # Description
 * An API built using spring boot to save you Pet pics
+* Right now support only for `PNG` and `JPEG` images
 
 # Architecture
 * This used formdata request to save you pet pics.
