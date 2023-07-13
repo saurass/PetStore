@@ -11,3 +11,12 @@
 
 
 [<img src="https://blog.haposoft.com/content/images/2021/10/131331002-b2ef5cd3-1e57-4a96-9155-f046d493e823.png" alt="swagger Icon" style="width:130px;"/>](https://htmlpreview.github.io/?https://github.com/saurass/PetStore/blob/master/API%20documentation/index.html)
+
+# Dockerize
+* Added docker file for ease of running
+* Use the commands as below
+
+```shell
+docker build -t petStorePicServ .
+docker run -p 9090:9090 petStorePicServ
+```
