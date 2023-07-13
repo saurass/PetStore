@@ -60,9 +60,9 @@ public class PetService implements IPetService {
 
         Resource file = fileEngine.load(pet.get().getFileHashName());
 
-        String imagePng = MediaType.IMAGE_PNG_VALUE;
+        String contentType = pet.get().getContentType();
 
-        return ResponseEntity.ok().header(HttpHeaders.CONTENT_TYPE, imagePng).body(file);
+        return ResponseEntity.ok().header(HttpHeaders.CONTENT_TYPE, contentType).body(file);
     }
 
     @Override
@@ -93,6 +93,7 @@ public class PetService implements IPetService {
                 // update file with same name and everything
                 try {
                     fileEngine.storeFile(pet1.getFileHashName(), file);
+                    pet1.setContentType(file.getContentType());
                 } catch (IOException e) {
                     throw new FileEngineException("Failed to Update File");
                 }
